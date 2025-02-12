@@ -11,7 +11,7 @@ const Main = () => {
         rel="noopener noreferrer"
         className="chatbot-link"
       >
-        <FaRobot /> Chat with us!
+         Chat with us!
       </a>
     </div>
   )
