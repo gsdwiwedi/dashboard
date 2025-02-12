@@ -20,7 +20,7 @@ const Main = () => {
   return (
     <div>
       <Outlet></Outlet>
-      
+      <div> Hii </div>
       {/* Add just the chat bot iframe */}
       <div style={{
         position: 'fixed',
@@ -44,7 +44,7 @@ const Main = () => {
         />
       </div>
     </div>
-//   )
-// }
+  )
+}
 
-// export default Main
+export default Main
