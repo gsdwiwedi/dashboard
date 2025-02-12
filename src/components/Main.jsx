@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet} from 'react-router'
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const Main = () => {
    useEffect(() => {
