@@ -1,11 +1,11 @@
 import React from 'react'
-import { Outlet, Link } from 'react-router'
+import { Outlet} from 'react-router'
 
 const Main = () => {
   return (
     <div>
         <Outlet></Outlet>
-      <Link>https://chatbot-one-sand-26.vercel.app/</Link>
+      <a>https://chatbot-one-sand-26.vercel.app/</a>
     </div>
   )
 }
