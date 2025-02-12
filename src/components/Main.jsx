@@ -48,58 +48,53 @@
 // }
 
 // export default Main
-
-import React, { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useState } from "react";
+import ChatBot from "./ChatBot"; // Import chatbot component
 
 const Main = () => {
-  const [chatHeight, setChatHeight] = useState('50px'); // Initially closed size
-
-  useEffect(() => {
-    const handleMessage = (event) => {
-      // Ensure message is from our chatbot
-      if (event.origin !== "https://chatbot-one-sand-26.vercel.app") return;
-
-      // Update height based on received message
-      if (event.data?.height) {
-        setChatHeight(`${event.data.height}px`);
-      }
-    };
-
-    window.addEventListener("message", handleMessage);
-    return () => {
-      window.removeEventListener("message", handleMessage);
-    };
-  }, []);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
     <div>
-      <Outlet />
-      {/* Chatbot iframe */}
-      <div
-        style={{
-          position: 'fixed',
-          bottom: '80px',
-          right: '20px',
-          width: '350px', // Fixed width
-          height: chatHeight, // Dynamic height
-          zIndex: 1000,
-          boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-          borderRadius: '10px',
-          overflow: 'hidden',
-          transition: 'height 0.3s ease-in-out', // Smooth transition
-        }}
-      >
-        <iframe
-          src="https://chatbot-one-sand-26.vercel.app/"
+      {/* Main Content */}
+      <div>
+        <button
+          onClick={() => setIsChatOpen(!isChatOpen)}
           style={{
-            width: '100%',
-            height: '100%',
-            border: 'none',
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            padding: "10px 20px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
           }}
-          title="Chat Bot"
-        />
+        >
+          {isChatOpen ? "Close Chat" : "Open Chat"}
+        </button>
       </div>
+
+      {/* ChatBot Box */}
+      {isChatOpen && (
+        <div
+          style={{
+            position: "fixed",
+            bottom: "80px",
+            right: "20px",
+            width: "350px",
+            height: "400px",
+            boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+            borderRadius: "10px",
+            overflow: "hidden",
+            backgroundColor: "white",
+            transition: "all 0.3s ease-in-out",
+          }}
+        >
+          <ChatBot />
+        </div>
+      )}
     </div>
   );
 };
