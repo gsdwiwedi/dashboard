@@ -11,7 +11,7 @@ const Main = () => {
        
     </div>
   )
-// }
+ }
 // import React from 'react'
 // import { Outlet } from 'react-router'
 // import { useEffect } from 'react';
