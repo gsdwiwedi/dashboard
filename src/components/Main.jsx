@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <div>
         <Outlet></Outlet>
-      <div>https://chatbot-one-sand-26.vercel.app/</div>
+      <Link>https://chatbot-one-sand-26.vercel.app/</Link>
     </div>
   )
 }
