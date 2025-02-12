@@ -6,7 +6,7 @@ const Main = () => {
    useEffect(() => {
     // Load the chatbot script dynamically
     const script = document.createElement('script');
-    script.src = '//code.tidio.co/your-tidio-key.js';
+    script.src = 'chatbot-one-sand-26.vercel.app';
     script.async = true;
     document.body.appendChild(script);
 
