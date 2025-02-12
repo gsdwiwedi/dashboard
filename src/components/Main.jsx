@@ -27,7 +27,7 @@ const Main = () => {
         bottom: '80px',
         right: '20px',
         width: '350px',
-        height: '550px',
+        height: '700px',
         zIndex: 1000,
         boxShadow: '0 0 10px rgba(0,0,0,0.1)',
         borderRadius: '10px',
